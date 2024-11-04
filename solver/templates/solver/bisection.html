@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bisection Method</title>
+    <style>
+      /* Reset some basic elements */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f4f4f9, #e0e4f0);
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding-top: 60px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .container {
+        background: linear-gradient(145deg, #ffffff, #e6e9ef);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15),
+          -10px -10px 30px rgba(255, 255, 255, 0.6);
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        animation: fadeIn 1s ease;
+      }
+
+      .container:hover {
+        transform: scale(1.02);
+        box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.2),
+          -12px -12px 35px rgba(255, 255, 255, 0.7);
+      }
+
+      label {
+        font-weight: bold;
+        color: #4b4b7c;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05),
+          inset -3px -3px 5px rgba(255, 255, 255, 0.7);
+        transition: border-color 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        border-color: #4b4b7c;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(145deg, #4b4b7c, #595ba5);
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15),
+          -5px -5px 15px rgba(255, 255, 255, 0.1);
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(145deg, #595ba5, #4b4b7c);
+        transform: scale(1.02);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
+          -5px -5px 20px rgba(255, 255, 255, 0.15);
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bisection Method</h1>
+    <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        <label for="function">Function f(x):</label>
+        <input type="text" name="function" required />
+
+        <label for="a">Interval start a:</label>
+        <input type="number" name="a" step="any" required />
+
+        <label for="b">Interval end b:</label>
+        <input type="number" name="b" step="any" required />
+
+        <label for="tolerance">Tolerance:</label>
+        <input type="number" name="tolerance" step="any" required />
+
+        <label for="max_iter">Maximum Iterations:</label>
+        <input type="number" name="max_iter" required />
+
+        <button type="submit">Calculate</button>
+      </form>
+    </div>
+  </body>
+</html>

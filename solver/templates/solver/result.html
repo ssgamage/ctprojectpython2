@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ method }} Result</title>
+    <style>
+      /* Reset some basic elements */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f4f4f9, #e0e4f0);
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding-top: 60px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: top: 120px;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .container {
+        background: linear-gradient(145deg, #ffffff, #e6e9ef);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15),
+          -10px -10px 30px rgba(255, 255, 255, 0.6);
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        animation: fadeIn 1s ease;
+      }
+
+      .container:hover {
+        transform: scale(1.02);
+        box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.2),
+          -12px -12px 35px rgba(255, 255, 255, 0.7);
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #4b4b7c;
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border: 2px solid #4b4b7c;
+        border-radius: 8px;
+        background: rgba(75, 75, 124, 0.1);
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      a:hover {
+        background-color: #4b4b7c;
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ method }} Method Result</h1>
+    <div class="container">
+      <p><strong>Estimated Root:</strong> {{ root }}</p>
+      <p><strong>Number of Iterations:</strong> {{ iterations }}</p>
+      <p><strong>Final Error:</strong> {{ error }}</p>
+      <a href="{% url 'index' %}">Back to Home</a>
+    </div>
+  </body>
+</html>

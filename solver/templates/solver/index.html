@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Numerical Methods Solver</title>
+    <style>
+      /* Reset some basic elements */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f4f4f9, #e0e4f0);
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding-top: 4px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #000000;
+        margin-bottom: 40px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 100px; /* Adjusts distance from the top */
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      li {
+        margin: 15px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #4b4b7c;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border: 2px solid #4b4b7c;
+        border-radius: 8px;
+        background: rgba(75, 75, 124, 0.1);
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      a:hover {
+        background-color: #4b4b7c;
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .container {
+        text-align: center;
+        background: linear-gradient(145deg, #ffffff, #e6e9ef);
+        padding: 50px 200px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15),
+          -10px -10px 30px rgba(255, 255, 255, 0.6);
+        max-width: 700px;
+        animation: fadeIn 1s ease;
+        transition: transform 0.3s ease;
+      }
+
+      .container:hover {
+        transform: scale(1.02);
+        box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.2),
+          -12px -12px 35px rgba(255, 255, 255, 0.7);
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Numerical Methods for Solving Nonlinear Equations</h1>
+    <div class="container">
+      <ul>
+        <li><a href="{% url 'bisection' %}">Bisection Method</a></li>
+        <li><a href="{% url 'newton_raphson' %}">Newton-Raphson Method</a></li>
+        <li><a href="{% url 'secant' %}">Secant Method</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
