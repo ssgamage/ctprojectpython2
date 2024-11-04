@@ -2,7 +2,11 @@
 
 def bisection_method(f, a, b, tol, max_iter):
     if f(a) * f(b) >= 0:
-        raise ValueError("The function must have different signs at endpoints a and b.")
+        # Return error message instead of raising an exception
+        c = "The function must have different signs at endpoints a and b."
+        iter_count = 0
+        final_error = None
+        return c, iter_count, final_error
 
     iter_count = 0
     c = a
