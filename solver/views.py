@@ -34,6 +34,8 @@ def bisection(request):
         
         # Call your bisection method
         root, iterations, error = bisection_method(f, a, b, tol, max_iter)
+        if isinstance(root, str):
+            return render(request, 'solver/resulterror.html', {'method': 'Bisection', 'root': root, 'iterations': iterations, 'error': error})
         return render(request, 'solver/result.html', {'method': 'Bisection', 'root': root, 'iterations': iterations, 'error': error})
     
     return render(request, 'solver/bisection.html')
